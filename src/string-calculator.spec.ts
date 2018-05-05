@@ -5,4 +5,14 @@ describe('String calculator', () => {
     const result = add('');
     expect(result).toBe(0);
   });
+
+  it('adds one number', () => {
+    const result = add('4');
+    expect(result).toBe(4);
+  });
+
+  it('adds one negative number', () => {
+    const result = add('-10');
+    expect(result).toBe(-10);
+  });
 });
