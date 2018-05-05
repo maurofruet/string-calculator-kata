@@ -14,6 +14,18 @@ module.exports = function(config) {
     files: ["src/**/*.ts"],
 
     karmaTypescriptConfig: {
+      compilerOptions: {
+        outDir: "./dist/out-tsc",
+        sourceMap: true,
+        declaration: false,
+        moduleResolution: "node",
+        emitDecoratorMetadata: true,
+        experimentalDecorators: true,
+        target: "es6",
+        typeRoots: ["node_modules/@types"],
+        types: ["jasmine"],
+        lib: ["es2017", "dom"]
+      },
       include: ["src/**/*.ts"]
     },
 
