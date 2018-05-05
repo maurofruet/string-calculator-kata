@@ -13,12 +13,15 @@ import checkNegativeNumbers from '../validator/validator';
  */
 export default function add(numbers: string): number {
   const numberList: number[] = split(numbers);
-  let sum = 0;
+  const biggestNumber = 1000;
+  let sum = 0;  
 
   checkNegativeNumbers(numberList);
 
   for (const value of numberList) {
-    sum += value;
+    if (value < biggestNumber) {
+      sum += value;
+    }
   }
 
   return sum;
