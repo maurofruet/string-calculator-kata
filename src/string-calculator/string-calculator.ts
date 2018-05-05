@@ -1,5 +1,5 @@
-import split from '../parser/parser';
-import checkNegativeNumbers from '../validator/validator';
+import split from './parser/parser';
+import checkNegativeNumbers from './validator/validator';
 
 /**
  * @name string-calculator.add
