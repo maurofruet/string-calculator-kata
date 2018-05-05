@@ -11,9 +11,10 @@ import checkNegativeNumbers from './validator/validator';
  * The presence of negative numbers will throw an Exception showing the list of negative numbers.
  */
 export default function add(numbers: string): number {
-  const numberList: number[] = split(numbers);
   const biggestNumber = 1000;
   let sum = 0;
+
+  const numberList: number[] = split(numbers);
 
   checkNegativeNumbers(numberList);
 
