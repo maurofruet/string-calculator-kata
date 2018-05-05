@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "karma start",
-    "single-test": "karma start --single-run"
+    "test": "karma start --single-run",
+    "test-watch": "karma start"
   },
   "author": "Mauro Fruet",
   "license": "ISC",

@@ -1,6 +1,8 @@
 import split from './parser/parser';
 import checkNegativeNumbers from './validator/validator';
 
+const biggestNumber = 1000;
+
 /**
  * @name string-calculator.add
  * @param {string} numbers - The string containing the numbers to be added and an optional delimiter.
@@ -11,9 +13,7 @@ import checkNegativeNumbers from './validator/validator';
  * The presence of negative numbers will throw an Exception showing the list of negative numbers.
  */
 export default function add(numbers: string): number {
-  const biggestNumber = 1000;
   let sum = 0;
-
   const numberList: number[] = split(numbers);
 
   checkNegativeNumbers(numberList);
