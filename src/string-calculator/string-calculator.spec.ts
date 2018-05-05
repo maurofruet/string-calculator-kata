@@ -30,4 +30,9 @@ describe('String calculator', () => {
     const result = add('-3,-7,0,4,8,-10');
     expect(result).toBe(-8);
   });
+
+  it('adds n numbers with new line and comma delimiters', () => {
+    const result = add('-3\n-7,4');
+    expect(result).toEqual(-6);
+  });
 });

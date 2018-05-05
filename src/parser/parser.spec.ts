@@ -36,4 +36,9 @@ describe('String parser', () => {
     const result = split('-3\n-7');
     expect(result).toEqual([-3, -7]);
   });
+
+  it('splits n numbers with new line and comma delimiters', () => {
+    const result = split('-3\n-7,4');
+    expect(result).toEqual([-3, -7, 4]);
+  });
 });
