@@ -15,4 +15,9 @@ describe('String calculator', () => {
     const result = add('-10');
     expect(result).toBe(-10);
   });
+
+  it('adds two numbers', () => {
+    const result = add('1,3');
+    expect(result).toBe(4);
+  });
 });
