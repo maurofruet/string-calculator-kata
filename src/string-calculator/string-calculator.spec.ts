@@ -31,8 +31,13 @@ describe('String calculator', () => {
     expect(result).toBe(4);
   });
 
+  it('sums all numbers that are less than 1000', () => {
+    const result = add('//\t\n1000\t3');
+    expect(result).toBe(1003);
+  });
+
   it('ignores numbers greater than 1000', () => {
-    const result = add('//\t\n1500\t3');
+    const result = add('//\t\n1001\t3');
     expect(result).toBe(3);
   });
 });
