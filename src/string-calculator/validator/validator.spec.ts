@@ -11,7 +11,7 @@ describe('Negative numbers validator', () => {
 
   it('throws an exception with negative numbers', () => {
     expect(() => {
-      checkNegativeNumbers([-3, -11]);
-    }).toThrow(new Error(`${ValidatorExceptionMessages.NEGATIVES_NOT_ALLOWED}-3,-11`));
+      checkNegativeNumbers([-3, -11, -50, 0, 18]);
+    }).toThrow(new Error(`${ValidatorExceptionMessages.NEGATIVES_NOT_ALLOWED}-3,-11,-50`));
   });
 });
