@@ -1,18 +1,19 @@
 import ParserExceptionMessages from './parser-exception-messages';
 
 /**
- * @name parser.split
- * @param {string} numbers - The string to be parsed to obtain an array of numbers.
- * @description It returns the array of numbers that can be found in the string passed as parameter.
- * The string must contain numbers that can be separated by multiple delimiters.
- * The currently supported delimiters are '\n' and ','. You can specify an additional delimiter with the following
- * syntax: "//[delimiter]\n[numbers...]".
- * The presence of negative numbers will throw an Exception showing the list of negative numbers.
- */
+   * It splits a string and returns an array of numbers.
+   * The returned string must contain numbers that can be separated by multiple delimiters.
+   * The currently supported delimiters are '\n' and ','. You can specify an additional delimiter with the following
+   * syntax: "//[delimiter]\n[numbers...]".
+   * The presence of negative numbers will throw an Exception showing the list of negative numbers.
+   * @param {string} numbers - The string to be parsed to obtain an array of numbers.
+   * @return {number[]} The array of numbers that are present in the string passed as parameter.
+   */
 export default function split(numbers: string): number[] {
   const delimiters = [',', '\\n'];
   const prefix = '//';
 
+  // Check whether the user has specified the optional delimiter.
   if (numbers.startsWith(prefix)) {
     const [defaultDelimiter, numbersToSplit] = getDefaultDelimiter(numbers, prefix);
 
@@ -29,17 +30,16 @@ export default function split(numbers: string): number[] {
 }
 
 /**
- * @name parser.getDefaultDelimiter
+ * It returns the default parameter specified by the user and the string to be split.
  * @param {string} numbers - The string to be parsed to obtain the optional delimiter specified by the user.
- * @description It returns an array composed of two elements.
- * The first element of the returned array is the additional delimiter that can be used to split the numbers passed
- * as parameter.
- * The second element of the returned array is the list of numbers found in the list passed as parameter.
+ * @return {string[]} An array composed of two elements: the first element is the additional delimiter that can be
+ * used to split the numbers passed as parameter, while the second element is the list of numbers found in the list
+ * passed as parameter.
  */
 function getDefaultDelimiter(numbers: string, prefix: string): string[] {
   const linefeed = '\n';
 
-    // remove the prefix to get the delimiter
+  // remove the prefix to get the delimiter
   const stringWithoutPrefix = numbers.substr(prefix.length);
   const tokens = stringWithoutPrefix.split(linefeed);
 
