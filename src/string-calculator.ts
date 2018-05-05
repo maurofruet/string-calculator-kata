@@ -1,4 +1,6 @@
-export function add(numbers: string): number {
+import split from './parser';
+
+export default function add(numbers: string): number {
   const list: number[] = split(numbers);
   let sum = 0;
 
@@ -7,9 +9,4 @@ export function add(numbers: string): number {
   }
 
   return sum;
-}
-
-function split(numbers: string): number[] {
-  const list: string[] = numbers.split(',');
-  return list.map(Number);
 }
