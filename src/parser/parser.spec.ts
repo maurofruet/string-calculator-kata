@@ -1,4 +1,5 @@
 import split from './parser';
+import ParserExceptionMessages from './parser-exception-messages';
 
 describe('String parser', () => {
 
@@ -48,12 +49,11 @@ describe('String parser', () => {
   });
 
   it('checks the presence of the string to be parsed when a delimiter is specified', () => {
-    expect(() => {split('//'); }).toThrow(new Error('The delimiter and the string have not been specified'));
+    expect(() => {split('//'); }).toThrow(new Error(ParserExceptionMessages.MISSING_DELIMITER_AND_STRING));
   });
 
   it('checks the presence of the delimiter', () => {
-    expect(() => {split('//\n2'); }).toThrow(new Error('The delimiter has not been specified'));
+    expect(() => {split('//\n2'); }).toThrow(new Error(ParserExceptionMessages.MISSING_DELIMITER));
   });
-
 
 });

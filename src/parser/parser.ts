@@ -1,3 +1,5 @@
+import ParserExceptionMessages from './parser-exception-messages';
+
 /**
  * @name parser.split
  * @param {string} numbers - The string to be parsed to obtain an array of numbers.
@@ -46,7 +48,7 @@ function getDefaultDelimiter(numbers: string, prefix: string): string[] {
     const delimiter = tokens[0];
 
     if (delimiter === '') {
-      throw new Error('The delimiter has not been specified');
+      throw new Error(ParserExceptionMessages.MISSING_DELIMITER);
     }
 
     // Compute the index at which the string to be split starts
@@ -54,6 +56,6 @@ function getDefaultDelimiter(numbers: string, prefix: string): string[] {
     const numbersToSplit = numbers.substr(startIndex);
     return [delimiter, numbersToSplit];
   } else {
-    throw new Error('The delimiter and the string have not been specified');
+    throw new Error(ParserExceptionMessages.MISSING_DELIMITER_AND_STRING);
   }
 }
