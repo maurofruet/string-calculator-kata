@@ -7,6 +7,11 @@ describe('String parser', () => {
     expect(result).toEqual([0]);
   });
 
+  it('splits two empty numbers', () => {
+    const result = split(',');
+    expect(result).toEqual([0, 0]);
+  });
+
   it('splits one number', () => {
     const result = split('5');
     expect(result).toEqual([5]);
@@ -41,4 +46,10 @@ describe('String parser', () => {
     const result = split('-3\n-7,4');
     expect(result).toEqual([-3, -7, 4]);
   });
+
+  it('splits n empty numbers with new line and comma delimiters', () => {
+    const result = split(',\n,');
+    expect(result).toEqual([0, 0, 0, 0]);
+  });
+
 });
