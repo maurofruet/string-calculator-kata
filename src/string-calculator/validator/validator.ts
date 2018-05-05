@@ -1,3 +1,5 @@
+import ValidatorExceptionMessages from './validator-exception-messages';
+
 /**
  * @name validator.checkNegativeNumbers
  * @param {number[]} numberList - The array of numbers to be checked
@@ -8,6 +10,6 @@ export default function checkNegativeNumbers(numberList: number[]) {
   const negativeNumbers = numberList.filter((number) => number < 0 );
 
   if (negativeNumbers.length > 0) {
-    throw new Error('negatives not allowed: ' + negativeNumbers);
+    throw new Error(`${ValidatorExceptionMessages.NEGATIVES_NOT_ALLOWED}${negativeNumbers}`);
   }
 }

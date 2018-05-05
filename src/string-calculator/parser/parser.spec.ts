@@ -55,5 +55,4 @@ describe('String parser', () => {
   it('checks the presence of the delimiter', () => {
     expect(() => {split('//\n2'); }).toThrow(new Error(ParserExceptionMessages.MISSING_DELIMITER));
   });
-
 });
