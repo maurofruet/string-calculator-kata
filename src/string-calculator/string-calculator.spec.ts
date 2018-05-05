@@ -31,7 +31,11 @@ describe('String calculator', () => {
     expect(result).toBe(4);
   });
 
-  it('throws an exception with negative numbers', () => {
+  it('throws an exception with a negative number', () => {
     expect(() => {add('//\t\n-3\t1'); }).toThrow(new Error('negatives not allowed: -3'));
+  });
+
+  it('throws an exception with negative numbers', () => {
+    expect(() => {add('//\t\n-3\t-11'); }).toThrow(new Error('negatives not allowed: -3,-11'));
   });
 });
