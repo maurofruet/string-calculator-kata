@@ -1,4 +1,4 @@
-import split from './parser';
+import split from '../parser/parser';
 
 export default function add(numbers: string): number {
   const list: number[] = split(numbers);
