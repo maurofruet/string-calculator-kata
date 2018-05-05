@@ -9,9 +9,14 @@
   "author": "Mauro Fruet",
   "license": "ISC",
   "devDependencies": {
+    "@types/jasmine": "^2.8.7",
     "jasmine-core": "^3.1.0",
     "karma": "^2.0.2",
     "karma-chrome-launcher": "^2.2.0",
-    "karma-jasmine": "^1.1.2"
+    "karma-jasmine": "^1.1.2",
+    "karma-typescript": "^3.0.12",
+    "ts-node": "^6.0.2",
+    "tslint": "^5.10.0",
+    "typescript": "^2.8.3"
   }
 }
