@@ -14,11 +14,9 @@ Compile the application by executing the following command:
     $ npm run build
 
 ### Run the Application
-Run the application by executing one the following equivalent commands, where [numbers] is the string containing the
-numbers to be added:
+Run the application by executing the following command:
 
-    $ npm run add-numbers [numbers]
-    $ node dist/test.min.js [numbers]
+    $ npm run stringCalculator
 
 ### Test the Application
 Run all the tests with Karma by executing the following command:
