@@ -25,7 +25,7 @@ Run all the tests with Karma by executing the following command:
 
     $ npm test
 
-If you want to execute all the tests in watch mode, so that all the tests are executed everytime at least of source file
-is changed, then execute the following command:
+If you want to execute all the tests in watch mode, so that all the tests are executed everytime at least one source
+file is changed, then execute the following command:
 
     $ npm run test-watch
