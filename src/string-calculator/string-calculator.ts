@@ -3,7 +3,7 @@ import checkNegativeNumbers from '../validator/validator';
 
 /**
  * @name string-calculator.add
- * @param {string} numbers
+ * @param {string} numbers - The string containing the numbers to be added and an optional delimiter.
  * @description It returns the sum of the numbers passed as parameter.
  * The string must contain numbers that can be separated by multiple delimiters.
  * The currently supported delimiters are '\n' and ','. You can specify an additional delimiter with the following
