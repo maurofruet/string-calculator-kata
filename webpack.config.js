@@ -3,6 +3,7 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
   mode: "production",
+  devtool: "source-map",
   entry: {
     index: "./src/index.ts",
     test: "./src/test.js"
@@ -17,5 +18,6 @@ module.exports = {
   },
   module: {
     rules: [{ test: /\.ts?$/, loader: "ts-loader" }]
-  }
+  },
+  target: "node"
 };

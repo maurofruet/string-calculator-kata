@@ -1,6 +1,11 @@
 import add from "./string-calculator/string-calculator";
 
-let numbers = "4,7,1005";
-let sum = add(numbers);
+const args = process.argv.slice(2);
 
-console.log(`The sum of numbers '${numbers}' is ${sum}`);
+if (args.length === 1) {
+  const numbers = args[0];
+  let sum = add(numbers);
+  console.log(`The sum of numbers '${numbers}' is ${sum}`);
+} else {
+  console.error("You have to specify exactly one parameter");
+}
