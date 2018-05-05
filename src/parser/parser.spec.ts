@@ -17,34 +17,24 @@ describe('String parser', () => {
     expect(result).toEqual([5]);
   });
 
-  it('splits one negative number', () => {
-    const result = split('-10');
-    expect(result).toEqual([-10]);
-  });
-
   it('splits two numbers', () => {
     const result = split('1,3');
     expect(result).toEqual([1, 3]);
   });
 
-  it('splits two negative numbers', () => {
-    const result = split('-3,-7');
-    expect(result).toEqual([-3, -7]);
-  });
-
   it('splits n numbers', () => {
-    const result = split('-3,-7,0,4,8,-10');
-    expect(result).toEqual([-3, -7, 0, 4, 8, -10]);
+    const result = split('-3,7,0,4,8,10');
+    expect(result).toEqual([-3, 7, 0, 4, 8, 10]);
   });
 
   it('splits two numbers with new line delimiter', () => {
-    const result = split('-3\n-7');
-    expect(result).toEqual([-3, -7]);
+    const result = split('3\n7');
+    expect(result).toEqual([3, 7]);
   });
 
   it('splits n numbers with new line and comma delimiters', () => {
-    const result = split('-3\n-7,4');
-    expect(result).toEqual([-3, -7, 4]);
+    const result = split('3\n7,4');
+    expect(result).toEqual([3, 7, 4]);
   });
 
   it('splits n empty numbers with new line and comma delimiters', () => {
@@ -55,6 +45,10 @@ describe('String parser', () => {
   it('supports different delimiters', () => {
     const result = split('//\t\n0\t1');
     expect(result).toEqual([0, 1]);
+  });
+
+  it('throws an exception with negative numbers', () => {
+    expect(() => {split('//\t\n-3\t1'); }).toThrow(new Error('negatives not allowed'));
   });
 
 });

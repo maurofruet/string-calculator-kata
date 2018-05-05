@@ -11,29 +11,19 @@ describe('String calculator', () => {
     expect(result).toBe(4);
   });
 
-  it('adds one negative number', () => {
-    const result = add('-10');
-    expect(result).toBe(-10);
-  });
-
   it('adds two numbers', () => {
     const result = add('1,3');
     expect(result).toBe(4);
   });
 
-  it('adds two negative numbers', () => {
-    const result = add('-3,-7');
-    expect(result).toBe(-10);
-  });
-
   it('adds n numbers', () => {
-    const result = add('-3,-7,0,4,8,-10');
-    expect(result).toBe(-8);
+    const result = add('3,7,0,4,8,10');
+    expect(result).toBe(32);
   });
 
   it('adds n numbers with new line and comma delimiters', () => {
-    const result = add('-3\n-7,4');
-    expect(result).toBe(-6);
+    const result = add('3\n7,4');
+    expect(result).toBe(14);
   });
 
   it('add numbers with support to different delimiters', () => {
