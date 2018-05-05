@@ -52,4 +52,9 @@ describe('String parser', () => {
     expect(result).toEqual([0, 0, 0, 0]);
   });
 
+  it('supports different delimiters', () => {
+    const result = split('//\t\n0,1');
+    expect(result).toEqual([0, 1]);
+  });
+
 });
