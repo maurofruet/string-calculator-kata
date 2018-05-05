@@ -1,7 +1,6 @@
 /**
- * @ngdoc function
  * @name parser.split
- * @param numbers: string
+ * @param {string} numbers
  * @description It returns the array of numbers that can be found in the string passed as parameter.
  * The string must contain numbers that can be separated by multiple delimiters.
  * The currently supported delimiters are '\n' and ','. You can specify an additional delimiter with the following
@@ -25,9 +24,8 @@ export default function split(numbers: string): number[] {
 }
 
 /**
- * @ngdoc function
  * @name parser.getDefaultDelimiter
- * @param numbers: string
+ * @param {string} numbers
  * @description It returns an array composed of two elements.
  * The first element of the returned array is the additional delimiter that can be used to split the numbers passed
  * as parameter.

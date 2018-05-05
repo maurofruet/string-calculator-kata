@@ -1,7 +1,6 @@
 /**
- * @ngdoc function
  * @name validator.checkNegativeNumbers
- * @param numberList: number[]
+ * @param {number[]} numberList
  * @description It checks whether the given array contains negative numbers. In such a case, an exception is thrown
  * showing the list of negative numbers found in the list.
  */
