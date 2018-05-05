@@ -9,12 +9,15 @@
  */
 export default function split(numbers: string): number[] {
   const delimiters = [',', '\\n'];
+  const prefix = '//';
 
-  const [defaultDelimiter, numbersToSplit] = getDefaultDelimiter(numbers);
+  if (numbers.startsWith(prefix)) {
+    const [defaultDelimiter, numbersToSplit] = getDefaultDelimiter(numbers, prefix);
 
-  if (defaultDelimiter) {
-    delimiters.push(defaultDelimiter);
-    numbers = numbersToSplit;
+    if (defaultDelimiter) {
+      delimiters.push(defaultDelimiter);
+      numbers = numbersToSplit;
+    }
   }
 
   const regEx = `[${delimiters.join()}]`;
@@ -31,27 +34,21 @@ export default function split(numbers: string): number[] {
  * as parameter.
  * The second element of the returned array is the list of numbers found in the list passed as parameter.
  */
-function getDefaultDelimiter(numbers: string): string[] {
-  const prefix = '//';
+function getDefaultDelimiter(numbers: string, prefix: string): string[] {
   const linefeed = '\n';
 
-  // Check if the user has specified an additional delimiter
-  if (numbers.startsWith(prefix)) {
     // remove the prefix to get the delimiter
-    const subsrt = numbers.substr(prefix.length);
-    const tokens = subsrt.split(linefeed);
+  const stringWithoutPrefix = numbers.substr(prefix.length);
+  const tokens = stringWithoutPrefix.split(linefeed);
 
-    // check that there are at least two lines: one for the delimiter and one for the string to be parsed
-    if (tokens.length > 1) {
-      const delimiter = tokens[0];
-      // Compute the index at which the string to be split starts
-      const startIndex = prefix.length + delimiter.length + linefeed.length;
-      const numbersToSplit = numbers.substr(startIndex);
-      return [delimiter, numbersToSplit];
-    } else {
-      return [undefined, numbers];
-    }
+  // check that there are at least two lines: one for the delimiter and one for the string to be parsed
+  if (tokens.length > 1) {
+    const delimiter = tokens[0];
+    // Compute the index at which the string to be split starts
+    const startIndex = prefix.length + delimiter.length + linefeed.length;
+    const numbersToSplit = numbers.substr(startIndex);
+    return [delimiter, numbersToSplit];
+  } else {
+    return [undefined, numbers];
   }
-
-  return [undefined, numbers];
 }
