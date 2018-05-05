@@ -1,8 +1,9 @@
 import ParserExceptionMessages from './parser-exception-messages';
 
-const delimiters = [',', '\\n'];
+const comma = ',';
+const newline = '\n';
+const delimiters = [comma, newline];
 const prefix = '//';
-const linefeed = '\n';
 
 /**
    * It splits a string and returns an array of numbers.
@@ -40,7 +41,7 @@ export default function split(inputString: string): number[] {
 function getDefaultDelimiter(inputString: string): string[] {
   // remove the prefix to get the delimiter
   const stringWithoutPrefix = inputString.substr(prefix.length);
-  const tokens = stringWithoutPrefix.split(linefeed);
+  const tokens = stringWithoutPrefix.split(newline);
 
   // check that there are at least two lines: one for the delimiter and one for the string to be parsed
   if (tokens.length > 1) {
@@ -51,7 +52,7 @@ function getDefaultDelimiter(inputString: string): string[] {
     }
 
     // Compute the index at which the string to be split starts
-    const startIndex = prefix.length + delimiter.length + linefeed.length;
+    const startIndex = prefix.length + delimiter.length + newline.length;
     const numbersToSplit = inputString.substr(startIndex);
     return [delimiter, numbersToSplit];
   } else {
