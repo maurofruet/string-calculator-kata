@@ -26,8 +26,13 @@ describe('String calculator', () => {
     expect(result).toBe(14);
   });
 
-  it('add numbers with support to different delimiters', () => {
+  it('adds numbers with support to different delimiters', () => {
     const result = add('//\t\n1\t3');
     expect(result).toBe(4);
+  });
+
+  it('ignores numbers greater than 1000', () => {
+    const result = add('//\t\n1500\t3');
+    expect(result).toBe(3);
   });
 });
