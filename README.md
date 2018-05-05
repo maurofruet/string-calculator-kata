@@ -9,3 +9,8 @@ After cloning this repository, install all the dependencies needed by this proje
 Run all the tests with Karma by executing the *test* npm script with the following command:
 
     $ npm test
+
+If you want to execute all the tests in watch mode, so that all the tests are executed everytime at least of source file
+is changed, then execute the *test-watch* npm script with the following command:
+
+    $ npm run test-watch
