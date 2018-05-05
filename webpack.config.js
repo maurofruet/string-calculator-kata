@@ -1,13 +1,11 @@
 const path = require("path");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
+const nodeExternals = require("webpack-node-externals");
 
 module.exports = {
   mode: "production",
   devtool: "source-map",
-  entry: {
-    index: "./src/index.ts",
-    test: "./src/test.js"
-  },
+  entry: "./src/index.ts",
   plugins: [new CleanWebpackPlugin(["dist"])],
   output: {
     filename: "[name].min.js",
@@ -17,7 +15,8 @@ module.exports = {
     extensions: [".ts"]
   },
   module: {
-    rules: [{ test: /\.ts?$/, loader: "ts-loader" }]
+    rules: [{ test: /\.ts?$/, loader: "ts-loader", exclude: /node_modules/ }]
   },
-  target: "node"
+  target: "node",
+  externals: [nodeExternals()]
 };

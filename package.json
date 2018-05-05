@@ -1,11 +1,11 @@
 {
   "name": "string-calculator-kata",
   "version": "1.0.0",
-  "description": "",
+  "description": "A command-line tool to add the numbers specified in a string",
   "main": "index.js",
   "scripts": {
-    "add-numbers": "node dist/test.min.js",
     "build": "webpack",
+    "stringCalculator": "node dist/main.min.js",
     "test": "karma start --single-run",
     "test-watch": "karma start"
   },
@@ -24,6 +24,10 @@
     "tslint": "^5.10.0",
     "typescript": "^2.8.3",
     "webpack": "^4.7.0",
-    "webpack-cli": "^2.1.2"
+    "webpack-cli": "^2.1.2",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "external-editor": "^2.2.0"
   }
 }

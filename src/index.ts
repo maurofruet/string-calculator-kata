@@ -1,1 +1,1 @@
-import add from './string-calculator/string-calculator';
+import './string-calculator/main';
