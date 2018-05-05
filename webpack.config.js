@@ -3,7 +3,10 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
   mode: "production",
-  entry: "./src/index.ts",
+  entry: {
+    index: "./src/index.ts",
+    test: "./src/test.js"
+  },
   plugins: [new CleanWebpackPlugin(["dist"])],
   output: {
     filename: "[name].min.js",
