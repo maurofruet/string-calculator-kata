@@ -25,4 +25,9 @@ describe('String calculator', () => {
     const result = add('-3,-7');
     expect(result).toBe(-10);
   });
+
+  it('adds n numbers', () => {
+    const result = add('-3,-7,0,4,8,-10');
+    expect(result).toBe(-8);
+  });
 });
