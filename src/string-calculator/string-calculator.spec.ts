@@ -33,6 +33,11 @@ describe('String calculator', () => {
 
   it('adds n numbers with new line and comma delimiters', () => {
     const result = add('-3\n-7,4');
-    expect(result).toEqual(-6);
+    expect(result).toBe(-6);
+  });
+
+  it('add numbers with support to different delimiters', () => {
+    const result = add('//\t\n1\t3');
+    expect(result).toBe(4);
   });
 });
