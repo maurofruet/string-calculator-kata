@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "add-numbers": "node dist/test.min.js",
     "build": "webpack",
     "test": "karma start --single-run",
     "test-watch": "karma start"
