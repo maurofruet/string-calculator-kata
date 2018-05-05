@@ -47,8 +47,4 @@ describe('String parser', () => {
     expect(result).toEqual([0, 1]);
   });
 
-  it('throws an exception with negative numbers', () => {
-    expect(() => {split('//\t\n-3\t1'); }).toThrow(new Error('negatives not allowed'));
-  });
-
 });
