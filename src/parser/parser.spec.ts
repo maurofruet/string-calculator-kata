@@ -47,4 +47,13 @@ describe('String parser', () => {
     expect(result).toEqual([0, 1]);
   });
 
+  it('checks the presence of the string to be parsed when a delimiter is specified', () => {
+    expect(() => {split('//'); }).toThrow(new Error('The delimiter and the string have not been specified'));
+  });
+
+  it('checks the presence of the delimiter', () => {
+    expect(() => {split('//\n2'); }).toThrow(new Error('The delimiter has not been specified'));
+  });
+
+
 });

@@ -44,11 +44,16 @@ function getDefaultDelimiter(numbers: string, prefix: string): string[] {
   // check that there are at least two lines: one for the delimiter and one for the string to be parsed
   if (tokens.length > 1) {
     const delimiter = tokens[0];
+
+    if (delimiter === '') {
+      throw new Error('The delimiter has not been specified');
+    }
+
     // Compute the index at which the string to be split starts
     const startIndex = prefix.length + delimiter.length + linefeed.length;
     const numbersToSplit = numbers.substr(startIndex);
     return [delimiter, numbersToSplit];
   } else {
-    return [undefined, numbers];
+    throw new Error('The delimiter and the string have not been specified');
   }
 }
