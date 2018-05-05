@@ -8,7 +8,7 @@ export default function split(numbers: string): number[] {
     numbers = numbersToSplit;
   }
 
-  const regEx = '[' + delimiters.join() + ']';
+  const regEx = `[${delimiters.join()}]`;
   const list: string[] = numbers.split(new RegExp(regEx));
 
   return list.map(Number);
