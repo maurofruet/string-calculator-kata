@@ -1,5 +1,5 @@
 export function add(numbers: string): number {
-  const list = split(numbers);
+  const list: number[] = split(numbers);
   let sum = 0;
 
   for (const value of list) {
@@ -10,6 +10,6 @@ export function add(numbers: string): number {
 }
 
 function split(numbers: string): number[] {
-  const list = numbers.split(',');
+  const list: string[] = numbers.split(',');
   return list.map(Number);
 }

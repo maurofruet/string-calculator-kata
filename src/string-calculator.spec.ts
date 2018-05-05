@@ -20,4 +20,9 @@ describe('String calculator', () => {
     const result = add('1,3');
     expect(result).toBe(4);
   });
+
+  it('adds two negative numbers', () => {
+    const result = add('-3,-7');
+    expect(result).toBe(-10);
+  });
 });
