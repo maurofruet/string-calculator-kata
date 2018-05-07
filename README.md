@@ -18,6 +18,9 @@ Run the application by executing the following command:
 
     $ npm run stringCalculator
 
+The application opens your default text editor, where you have to type the string containing the numbers to be added.
+After saving the file and closing the text editor, the sum is printed to the console.
+
 ### Test the Application
 Run all the tests with Karma by executing the following command:
 
