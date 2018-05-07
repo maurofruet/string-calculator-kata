@@ -1,7 +1,7 @@
 {
   "name": "string-calculator-kata",
   "version": "1.0.0",
-  "description": "A command-line tool to add the numbers specified in a string",
+  "description": "A TDD Kata, an exercise in coding, refactoring and test-first",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
